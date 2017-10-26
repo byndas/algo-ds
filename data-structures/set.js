@@ -30,43 +30,67 @@ Note: ES6 has a Set data structure as part of the core language.
 
 *** Additional Exercises:
 
-Modify your set to take a max capacity and return a string if you try to add an element when there's no more room
+Modify your set to take a max capacity and return a string if you try
+to add an element when there's no more room 
+
 mySet.add(value)
 => "Max capacity already reached. Remove element before adding a new one."
 
-Make your set able to take objects, arrays, and functions as values in addition to just primitives.
-
+Make your set able to take objects, arrays, and functions as values in
+addition to just primitives.
 
  */
-
 function Set(capacity) {
-  // implement me...
+  this._capacity = capacity;
+  this._storage = {};
+  this._count = 0;
 }
 
+
+// O(1)
 Set.prototype.count = function() {
-  // implement me...
+  return this._count;
 };
-// Time complexity:
 
-Set.prototype.add = function(value) {
-  // implement me...
-};
-// Time complexity:
 
-Set.prototype.delete = function(value) {
-  // implement me...
-};
-// Time complexity:
-
+// O(1)
 Set.prototype.has = function(value) {
-  // implement me...
+  return !!this._storage[value];
 };
-// Time complexity:
 
-Set.prototype.forEach = function(callback) {
-  // implement me...
+
+// O(1)
+Set.prototype.add = function(value) {
+  if (this.has(value)) {
+    return 'Set already has value';
+  }
+  else if (this._count < this._capacity) {
+    this._storage[value] = true;
+    this._count++;
+    return this;
+  }
+  return 'Max capacity already reached. Remove element before adding a new one.'
 };
-// Time complexity:
+
+
+// O(1)
+Set.prototype.delete = function(value) {
+  if (this._storage[value]) {
+    delete this._storage[value];
+    this._count--;
+    return true;
+  }
+  return false;
+};
+
+
+// O(n)
+Set.prototype.forEach = function(callback) {
+  var values = this._storage;
+  for (var key in values) {
+    callback(key);
+  }
+};
 
 
 /*
