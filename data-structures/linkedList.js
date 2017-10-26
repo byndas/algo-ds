@@ -88,60 +88,96 @@ function Node(value) {
 function LinkedList(headValue) {
   if (headValue === undefined) console.log('Must provide value for first node');
   this.head = new Node(headValue);
+  this.tail = this.head;
 }
 
 LinkedList.prototype.forEach = function(callback) {
-  // implement me...
+  var node = this.head;
+  while (node) {
+    callback(node.value);
+    node = node.next;
+  }
 };
-// Time complexity:
 
 LinkedList.prototype.print = function() {
-  // implement me...
+  var result = [];
+  this.forEach(function(value) {
+    result.push(value);
+  });
+  return result.join(', ');
 };
-// Time complexity:
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // implement me...
+  // get reference to former next
+  var oldNext = node.next;
+  // create new node
+  var newNext = new Node(value);
+  // store it as the new next
+  node.next = newNext;
+  // set next for the new node to be the old next
+  newNext.next = oldNext;
+  // if reference node is tail, set tail to newNext
+  if (this.tail === node) this.tail = newNext;
+  return newNext;
 };
-// Time complexity:
 
 LinkedList.prototype.removeAfter = function(node) {
-  // implement me...
+  // store reference to removed node
+  var removedNode = node.next;
+  // if node is tail, then there's nothing to remove
+  if (!removedNode) return 'Nothing to remove';
+  // get reference to node after removed node
+  var newNext = removedNode.next;
+  // set newNext as the next node
+  node.next = newNext;
+  // remove reference from removed node to linked list
+  removedNode.next = null;
+  // if removedNode is tail, set tail to node
+  if (removedNode === this.tail) this.tail = node;
+  return removedNode;
 };
-// Time complexity:
 
 LinkedList.prototype.insertHead = function(value) {
-  // implement me...
+  var newHead = new Node(value);
+  var oldHead = this.head;
+  this.head = newHead;
+  newHead.next = oldHead;
+  return this.head;
 };
-// Time complexity:
 
 LinkedList.prototype.removeHead = function() {
-  // implement me...
+  var oldHead = this.head;
+  var newHead = oldHead.next;
+  this.head = newHead;
+  oldHead.next = null;
+  return oldHead;
 }
 
 LinkedList.prototype.findNode = function(value) {
-  // implement me...
+  var node = this.head;
+  while (node) {
+    if (node.value === value) return node;
+    node = node.next;
+  }
+  return 'No node with value: ' + value + ' found.';
 };
-// Time complexity:
 
 LinkedList.prototype.appendToTail = function(value) {
-  // implement me...
+  var newTail = new Node(value);
+
+  // // without myList.tail property: O(n)
+  // var node = this.head;
+  // while(node.next) {
+  //   node = node.next;
+  // }
+  // node.next = newTail;
+
+  // with myList.tail property: O(1)
+  this.tail.next = newTail;
+  this.tail = newTail;
+
+  return newTail;
 };
-// Time complexity:
-
-
-// PART 2:
-
-LinkedList.prototype.insertBefore = function(node, value) {
-  // implement me...
-};
-// Time complexity:
-
-LinkedList.prototype.removeBefore = function(node) {
-  // implement me...
-};
-// Time complexity:
-
 
 
 /*
