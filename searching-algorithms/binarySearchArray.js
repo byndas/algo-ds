@@ -27,9 +27,11 @@ Implement this function both iteratively and recursively.
 // Iterative solution:
 
 // function binarySearch(array, target) {
+
 //   var lo = 0;
 //   var hi = array.length-1;
-//   while (lo <= hi) {
+
+//   while (lo <= hi) { // any recursion can be written using a while loop
 //     var mid = Math.floor((hi-lo)/2) + lo;
 //     if (target === array[mid]) return mid;
 //     else if (target < array[mid]) hi = mid-1;
