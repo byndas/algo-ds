@@ -10,14 +10,12 @@ It has a partitioning step, in which you pick an element (called a pivot) and pa
 - Identify time complexity
 - Identify space complexity
 - Consider implications for choice of pivot (https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot)
+
 *** Extra Credit
+
 Variants:
 - Implement a multi-pivot quicksort (ex: partition into 3 subarrays using 2 pivots)
-*/
 
-
-
-/*
 Properties:
 O(n) extra space
 O(n^2) time (for few unique keys), but typically O(n·log(n)) if recursion is balanced
@@ -26,6 +24,7 @@ not adaptive
 Use cases:
 Quicksort is in place and has low overhead. If a stable sort is not necessary. It has a higher worstcase time complexity than merge sort (if pivot is not in center of array)
 */
+
 function quicksort(array, lo, hi) {
   if (lo === undefined) lo = 0;
   if (hi === undefined) hi = array.length-1;

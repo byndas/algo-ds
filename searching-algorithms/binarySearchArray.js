@@ -3,19 +3,29 @@ BINARY SEARCH ARRAY
 
 *** Description
 
-Given a sorted array and a value, determine if the value is in the array using the binary search (divide and conquer) method.
+Given a sorted array and a value, 
+determine if the value is in the array using
+the binary search (divide and conquer) method.
 
 *** Exercises
 
-Write a function that takes a sorted array and a value and returns the index of the value in the array. Return null if the value is not found in the array. What is the time complexity?
+Write a function that takes a sorted array and a value
+and returns the index of the value in the array.
 
-Extra credit: Implement the function both iteratively and recursively.
+Return null if the value is not found in the array.
+
+What is the time complexity?
+
+Extra credit: 
+Implement this function both iteratively and recursively.
 
 */
 
-// Time complexity: O(log(n))
+// Time complexity is O(log(n)) for both
 
-// // Iterative solution
+
+// Iterative solution:
+
 // function binarySearch(array, target) {
 //   var lo = 0;
 //   var hi = array.length-1;
@@ -28,14 +38,22 @@ Extra credit: Implement the function both iteratively and recursively.
 //   return null;
 // }
 
-// Recursive solution
+// Recursive solution:
+
 function binarySearch(array, target) {
-  return (function recurse(lo, hi) {
+    
+  return (function recurse(lo, hi) { // iife
+    
     if (lo > hi) return null;
+    
     var mid = Math.floor((hi-lo)/2) + lo;
+    
     if (target === array[mid]) return mid;
+    
     else if (target < array[mid]) return recurse(lo, mid-1);
+    
     else return recurse(mid+1, hi);
+    
   })(0, array.length-1);
 }
 
