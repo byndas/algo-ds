@@ -1,39 +1,50 @@
 /*
 LINKED LIST
-Comprised of nodes that represent a sequence.
-Each node is composed of data and a reference/link to the next node.
+... composes nodes representing a sequence.
+Each node contains data and a reference/link to the next node.
+
 *** Operations:
-** Part 1
+
+*** Part 1
+
 myList.forEach(callbackFn)
-invoke callback function with the value of each node
+=> invokes callback function with the value of each node --> (item)
+
 myList.print()
-=> string with all values in list (ex: '0, 1, 2, 3')
+=> returns a string of all list values (ex: '0, 1, 2, 3')
+
 myList.insertAfter(refNode, value)
-=> new node
-insert new node associated with value passed in after refNode
+=> returns a new node with a given value
+
 myList.removeAfter(refNode)
-=> removed node
-remove node after the refNode
+=> removes the node after refNode (& returns it?)
+
 myList.insertHead(value)
-=> new head
-insert new head node at the beginning of the list with the value passed in
-myList.removeHead()
-=> removed head node
-remove the head node of the linked list
+=> unshifts a new head node with a given value & returns it
+
+passed in myList.removeHead()
+=> removes it from the linked list & returns it
+
 myList.findNode(value)
-=> first node that has a value matching what was passed in
-* Optimization:
-Say we have a linked list that has 100 items and we want to add an item to the very end. How would you do that with your current implementation? How can you modify the data structure to add an item to the end in constant time?
+=> returns the first node that has a given value
+
+
+*** Optimization:
+How to add an item to the end of a 100-item linked-list in constant time?
+
 myList.appendToTail(value)
-=> tail node
-add a new tail node at the end of the list with the associated value passed in
+=> pushes a new tail node with a given value & returns it
+
 myList.removeTail()
-=> removed tail node
-remove the tail node from the list
-** Part 2
-Now let's think about creating insertBefore and removeBefore methods for the nodes in our list. Can you think of an efficient way to do so?
-Think about time complexity. What would it be for your current implementation of a linked list?
-How can we modify our data structures (Node and Linked List classes) so that we can make these O(1) operations?
+=> returns the removed tail node, removes it from the list
+
+
+*** Part 2
+
+How to more efficiently create insertBefore & removeBefore methods?
+What's your current time complexity?
+
+How to modify our Node and Linked-List classes to be O(1)?
 Once you've come up with a plan, implement the following methods.
 myList.insertBefore(refNode, value)
 => new node inserted
@@ -44,7 +55,8 @@ remove node before the refNode passed in
 *** Additional Exercises:
 Implement a circularly linked list:
 https://en.wikipedia.org/wiki/Linked_list#Circularly_linked_list
- */
+
+*/
 
 
 function Node(value) {
