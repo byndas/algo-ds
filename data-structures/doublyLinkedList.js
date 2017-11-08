@@ -1,7 +1,6 @@
 /*
-LINKED LIST
-... composes nodes representing a sequence.
-Each node contains data and a reference/link to the next node.
+LINKED LIST... composes nodes to represent a sequence.
+  Each node contains data and a reference/link to the next node.
 
 *** Operations:
 
@@ -42,22 +41,21 @@ myList.removeTail()
 *** Part 2
 
 How to more efficiently create insertBefore & removeBefore methods?
-What's your current time complexity?
+What's the current time complexity?
 
 How to modify our Node and Linked-List classes to be O(1)?
-Once you've come up with a plan, implement the following methods.
+Once you've come up with a plan, implement the following methods:
+
 myList.insertBefore(refNode, value)
-=> new node inserted
-insert new node with associated value before refNode
+=> inserts a new node with a given value before refNode & returns it
+
 myList.removeBefore(refNode)
-=> removed node
-remove node before the refNode passed in
-*** Additional Exercises:
-Implement a circularly linked list:
+=> removes a node before refNode & returns it
+
+
+*** Additional Exercise --> Implement a circularly linked list:
 https://en.wikipedia.org/wiki/Linked_list#Circularly_linked_list
-
 */
-
 
 function Node(value) {
   this.value = value;
@@ -88,21 +86,23 @@ LinkedList.prototype.print = function() {
 };
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // get reference to former next
-  var oldNext = node.next;
-  // create new node
-  var newNext = new Node(value);
-  // store it as the new next
-  node.next = newNext;
+  
+  var oldNext = node.next; // gets reference from the previous next
+  
+  var newNext = new Node(value); // creates new node
+  
+  // stores it as the new next
+  node.next = newNext; 
   newNext.prev = node;
-  // set next for the new node to be the old next
-  newNext.next = oldNext;
-  oldNext && (oldNext.prev = newNext); // do this only if oldNext is not null
+  
+  newNext.next = oldNext; // sets the new node's next to be the old next
+  
+  oldNext && (oldNext.prev = newNext); // do this if (oldNext !== null)
+  
   // if reference node is tail, set tail to newNext
-  if (this.tail === node) this.tail = newNext;
-  // set prev properties
+  if (this.tail === node) this.tail = newNext; 
 
-  return newNext;
+  return newNext; // sets prev properties
 };
 
 LinkedList.prototype.removeAfter = function(node) {
