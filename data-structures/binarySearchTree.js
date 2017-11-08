@@ -123,7 +123,7 @@ bsTree.traverseDepthFirst_preOrder(function(node) {
 console.log(result_traverseDepthFirst_preOrder, 'should be [10,5,3,8,7,9,15,14,20,17]');
 
 // Post-Order traversal
-// visit the current node after its child nodes
+// visits the current node after its child nodes
 // O(n)
 BinarySearchTree.prototype.traverseDepthFirst_postOrder = function(fn) {
   if (this.left) this.left.traverseDepthFirst_postOrder(fn);
@@ -155,7 +155,7 @@ bsTree.traverseBreadthFirst(function(node) {
 console.log(result_traverseBreadthFirst, 'should be [10,5,15,3,8,14,20,7,9,17]');
 
 // O(n)
-// A binary tree is full if every node has either zero or two children (no nodes have only one child)
+// A full binary tree has no one-node children (each has either 0 or 2)
 BinarySearchTree.prototype.checkIfFull = function() {
   var result = true;
   this.traverseBreadthFirst(function(node) {
@@ -171,7 +171,8 @@ var fullBSTree = new BinarySearchTree(10);
 fullBSTree.insert(5).insert(20).insert(15).insert(21).insert(16).insert(13);
 console.log(fullBSTree.checkIfFull(), 'should be true');
 
-// For this exercise, let's say that a tree is balanced if the minimum height and the maximum height differ by no more than 1. The height for a branch is the number of levels below the root.
+// A tree is balanced if the min height & max height differ by < 2.
+// A branch's height === number of levels below the root.
 // O(n)
 BinarySearchTree.prototype.checkIfBalanced = function() {
   var heights = [];
