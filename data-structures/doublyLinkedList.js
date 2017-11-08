@@ -158,7 +158,7 @@ LinkedList.prototype.findNode = function(value) {
 LinkedList.prototype.appendToTail = function(value) {
   var newTail = new Node(value);
 
-  // // without myList.tail property: O(n)
+  // // O(n)
   // var node = this.head;
   // while(node.next) {
   //   node = node.next;
@@ -166,7 +166,7 @@ LinkedList.prototype.appendToTail = function(value) {
   // node.next = newTail;
   // newTail.prev = node;
 
-  // with myList.tail property: O(1)
+  // O(1)
   var oldTail = this.tail;
   oldTail.next = newTail;
   newTail.prev = oldTail;
@@ -178,14 +178,16 @@ LinkedList.prototype.appendToTail = function(value) {
 LinkedList.prototype.insertBefore = function(node, value) {
   var oldPrev = node.prev;
   var newPrev = new Node(value);
-  // Set up references between reference node and inserted node
+  
+  // Sets references between referenced node and inserted node
   node.prev = newPrev;
   newPrev.next = node;
-  // Set up references between inserted node and old previous node
+  
+  // Sets references between inserted node and old previous node
   newPrev.prev = oldPrev;
   oldPrev.next = newPrev;
 
-  // if node is head, set newPrev as head
+  // if (node === head), sets newPrev as head
   if (node === this.head) this.head = newPrev;
 
   return newPrev;
@@ -194,17 +196,21 @@ LinkedList.prototype.insertBefore = function(node, value) {
 LinkedList.prototype.removeBefore = function(node) {
   var removedNode = node.prev;
 
-  // if node is head, don't do anything
+  // if (node === head), don't do anything
   if (!removedNode) return 'Nothing to remove';
 
   var newPrev = removedNode.prev;
-  // if newPrev is null, then removed node is head, set node to be new head
+  
+  // if (newPrev === null), then removed node is head
+  // sets node to be the new head
   if (!newPrev) this.head = node;
-  // Set up references between node and new previous node
-  // if newPrev is not null, set its next property to node
+  
+  // Sets references between node and new previous node
+  // if (newPrev !== null), sets its next property to node
   newPrev && (newPrev.next = node);
   node.prev = newPrev;
-  // Break references from removed node to linked list
+  
+  // Breaks the references from removedNode to linked list
   removedNode.next = null;
   removedNode.prev = null;
 
