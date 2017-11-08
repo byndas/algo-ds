@@ -106,23 +106,24 @@ LinkedList.prototype.insertAfter = function(node, value) {
 };
 
 LinkedList.prototype.removeAfter = function(node) {
-  // store reference to removed node
-  var removedNode = node.next;
-  // if node is tail, then there's nothing to remove
+  
+  var removedNode = node.next; // stores a reference to the removed node
+  
+  // if (node === tail) then nothing to remove
   if (!removedNode) return 'Nothing to remove';
 
-  // get reference to node after removed node
+  // newNext now refers to the node after the removed node
   var newNext = removedNode.next;
 
-  // set references between node and new next
+  // sets references between node and newNext
   node.next = newNext;
   newNext.prev = node;
 
-  // remove reference from removed node to linked list
+  // removes removedNode's reference to linked list
   removedNode.next = null;
   removedNode.prev = null;
 
-  // if removedNode is tail, set tail to node
+  // if (removedNode === tail), sets tail to node
   if (removedNode === this.tail) this.tail = node;
   return removedNode;
 };
