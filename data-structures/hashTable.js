@@ -17,13 +17,13 @@ A hashing function maps the key to an integer,
 We make buckets (arrays or linked lists) at each storage array index
 to correct collisions (hashing function maps keys to the same integer)
 
-
-
 *** Note:
 
-ES6 includes a Map data structure. It differs from the JavaScript object because the keys can be any value (not just strings like for objects), there is a size property, and there is a guaranteed order (the insertion order).
+ES6 includes a unique Map data structure, differing from the JS object
+  since keys may be of any value (not only strings for objects), 
+    there is a size property & a guaranteed (insertion) order.
 
-Hash tables are also referred to as hash mapse or dictionaries.
+Hash tables are also called hash maps or dictionaries.
 
 
 *** Operations:
