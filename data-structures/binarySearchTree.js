@@ -81,26 +81,25 @@ BinarySearchTree.prototype.insert = function(value) {
 
 // O(log(n));
 BinarySearchTree.prototype.contains = function(value) {
-  if (this.value === value) return true;
-  if (value < this.value) {
-    // if this.left doesn't exist return false
-    // if it does exist, check if its subtree contains the value
+  if (this.value === value) return true; 
+  if (value < this.value) { // if this.left exists,
+    //check its subtree for the value
     return !!this.left && this.left.contains(value);
   }
-  if (value > this.value) {
-    // if this.right doesn't exist return false
-    // if it does exist, check if its subtree contains the value
+  if (value > this.value) { // if this.right exists,
+    // check its subtree for the value
     return !!this.right && this.right.contains(value);
   }
-  return false;
+  return false; // if this.left or this.right don't exist, return false
 };
 
 var bsTree = new BinarySearchTree(10);
 bsTree.insert(5).insert(15).insert(8).insert(3).insert(7).insert(20).insert(17).insert(9).insert(14);
 
 // In-Order traversal is most common
-// visit left branch, then current node, than right branch
-// For binary search tree, this visits the nodes in ascending order (hence the name)
+//  (visit left branch, then current node, than right branch)
+// For binary search tree, this visits the nodes in ascending order
+//  (hence the name)
 // O(n)
 BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
   if (!this.left && !this.right) return fn(this);

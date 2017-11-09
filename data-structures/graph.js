@@ -3,13 +3,17 @@ GRAPHS
 
 Abstract data type
 
-Basic Graph:
-Stores nodes (represented by any primitive value) and the neighbors for each node. This implementation represents a graph as an adjacency list (https://en.wikipedia.org/wiki/Adjacency_list).
+Basic Graphs store nodes (primitive value) & each node's neighbors.
 
-Here's an example:
+A basic graph is an adjacency list 
+(https://en.wikipedia.org/wiki/Adjacency_list).
+
+Example:
+
 1---2---3
  \ /
   4
+  
 graph = {
   1: [2, 4],
   2: [1, 3, 4],
@@ -17,50 +21,58 @@ graph = {
   4: [1, 2]
 }
 
-Constraints:
-This graph implementation is undirected and can have unconnected nodes. The nodes are represented by unique primitive values.
+Constraints: undirected & can have unconnected nodes
+             unique primitive values represent nodes
 
 *** Operations:
+
 graph.addNode(value) // value must be a primitive
-=> undefined
-Add node to graph
+=> adds node to graph & returns undefined
 
 graph.removeNode(value)
-=> undefined
-Remove node from graph
+=> remove node from graph & returns undefined
 
 graph.contains(value)
-=> true/false
-Returns true if value is found in graph, false otherwise
+=> returns true/false... if value is found in graph
 
 graph.addEdge(value1, value2)
-=> undefined
-Create connection between two nodes if they're both present in the graph
+=> links two nodes if both present in the graph & returns undefined
 
 graph.removeEdge(value1, value2)
-=> undefined
-Remove connection between two nodes
+=> removes connection between two nodes & returns undefined
 
 graph.hasEdge(value1, value2)
-=> true/false
-Returns true if edge exists, false otherwise
+=> returns true/false... if edge exists
 
 graph.forEach(callback)
-=> undefined
-Traverse the graph and invoke the passed callback once for each node. The callback function receives the following for each node: node value, node Neighbors, all nodes.
+=> traverses graph & runs the callback once for each node,
+  the callback receives for each node: 
+    node value, node Neighbors, all nodes.
+
 
 *** Nightmare mode:
-Implement traversal methods for depth-first and breadth-first traversal. The methods take a starting node and a callback that gets invoked for each node. The callback should receive two arguments: the node value and the distance (number of edges that separate the node from the starting node). See example usage below.
+
+Implement traversal methods for depth-first and breadth-first traversal.
+
+These methods take a starting node and a callback that runs for each node.
+
+The callback takes two arguments: node value & distance
+  (# of edges between current node & starting node).  [example below]
+  
 graph.traverseDepthFirst(value1, callback)
-=> undefined
-Starting at the node with the value passed in, traverse the graph and invoke the callback for each node in a depth-first fashion.
+=> starts at the node with value1, traverses the graph, runs the
+  callback for each node in a DEPTH-first fashion & returns undefined
+  
 graph.traverseBreadthFirst(value, callback)
-=> undefined
-Starting at the node with the value passed in, traverse the graph and invoke the callback for each node in a breadth-first fashion.
-Example Usage:
+=> starts at the node with value1, traverses the graph, runs the
+  callback for each node in a BREADTH-first fashion & returns undefined
+
+Example:
+
 1---2---3---5
  \ /
   4
+
 {
   '1': [ 2, 4 ],
   '2': [ 1, 3, 4 ],
@@ -68,14 +80,32 @@ Example Usage:
   '4': [ 1, 2 ],
   '5': [ 3 ]
 }
+
 var traverseDF = [];
-graph.traverseDepthFirst(1, function(val, distance) { traverseDF.push([val, distance]) });
-traverseDF should be [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 5, 3 ], [ 4, 2 ] ]
+
+graph.traverseDepthFirst(1, function(val, distance) { 
+  traverseDF.push([val, distance])
+});
+
+traverseDF is now [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 5, 3 ], [ 4, 2 ] ]
+
 var traverseBF = [];
-graph.traverseBreadthFirst(1, function(val, distance) { traverseBF.push([val, distance]) });
-traverseBF should be [ [ 1, 0 ], [ 2, 1 ], [ 4, 1 ], [ 3, 2 ], [ 5, 3 ] ]
+
+graph.traverseBreadthFirst(1, function(val, distance) {
+  traverseBF.push([val, distance])
+});
+
+traverseBF is now [ [ 1, 0 ], [ 2, 1 ], [ 4, 1 ], [ 3, 2 ], [ 5, 3 ] ]
+
+
 *** Exercises:
-Given a directed graph and two nodes in the graph, write a function that indicates whether there is a route between the two nodes. Bonus: rather than returning a boolean, have your function return the shortest distance between the two nodes (the number of edges that separate them).
+
+Given a directed graph with two nodes in the graph, 
+  write a function that returns whether there is a route
+    between the two nodes.
+    
+Bonus: instead of returning a boolean, return the shortest distance
+  between those two nodes (# of edges that separate them).
 */
 
 function Graph () {
@@ -153,7 +183,6 @@ Graph.prototype.traverseBreadthFirst = function(value, fn) {
     queue = queue.concat(neighbors);
   }
 };
-
 
 
 var graph = new Graph();
