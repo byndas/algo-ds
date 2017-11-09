@@ -27,30 +27,43 @@ Hash tables are also called hash maps or dictionaries.
 
 
 *** Operations:
+
 myMap.set(key, value)
 => myMap object
 Store the key-value pair in the storage array.
 If the key already exists, replace stored value with new value.
 Use the hashing function to map the key to an integer and store the value at the corresponding index.
 Account for the possibility of collisions.
+
 myMap.get(key)
 => value associated with key, or undefined if none
+
 myMap.has(key)
 => true/false depending on if a value has been associated with the key
+
 myMap.delete(key)
 => true if a value was associated with the key
 => false if a value was never associated with the key
 Remove any value associated to the key
+
 myMap.count()
 => integer number of key/value pairs in hash table
+
 myMap.forEach(callbackFn)
 => no returned value
 Invokes callback function once for each key-value pair in the hash table
-*** Exercises:
-Resize the hash table:
-- if the count becomes greater than 75% of the table size, double the table size and redistribute the key/value pairs
-- if the count becomes less than 25% of the table size, cut the table size in half and redistribute the key/value pairs
-Implement a hash table with a binary search tree.
+
+
+*** Exercise ---> Resize the hash table:
+
+- if the count grows beyond 75% of the table size, 
+  double that table size and redistribute the key/value pairs
+
+- if the count drops below 25% of the table size,
+  cut the table size in half and redistribute the key/value pairs
+
+Implement a hash table with a bsTree.
+
 */
 
 // Simple hashing function to use in your implementation
