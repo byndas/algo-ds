@@ -3,11 +3,20 @@
 HASH TABLE
 
 Collection of key-value pairs.
+
 Map keys to values for efficient lookup.
+
 Use an array as the underlying data structure.
-Hash table should have a size - this will be used by the hashing function to determine what index to map the key to.
-A hashing function is used to map the key to an integer, which is the index that the value is to be stored at.
-Since our hashing function might map multiple keys to the same integer, we have to deal with collisions by creating buckets at each index of the storage array. These buckets can be arrays or linked lists.
+
+Hash tables should have a size -- which the hashing function uses
+  to know which index to map the key to.
+
+A hashing function maps the key to an integer, 
+  which is the index that the value is to be stored at.
+  
+We make buckets (arrays or linked lists) at each storage array index
+to correct collisions (hashing function maps keys to the same integer)
+
 
 
 *** Note:
