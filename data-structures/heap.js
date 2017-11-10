@@ -14,18 +14,17 @@ A max heap is a special binary tree satisfying two properties:
 Heaps usually occur in an array... 
 Child nodes of parent position 'n' have positions 2n+1 and 2n+2.
 
-View visualization here: https://presentpath.github.io/heap-visualizer/
+View visualization here: 
+https://presentpath.github.io/heap-visualizer/
 
 *** Operations:
 
 heap.insert(value)
-=> undefined
-Add value to heap according to the shape and heap property
+=> adds value to heap with shape & heap properties & returns undefined
+
 
 heap.removeMax()
-=> max value
-Remove the max value from the heap, reorder the heap, and return the max value
-
+=> removes max value from & reorders the heap, then returns max value
 */
 
 
