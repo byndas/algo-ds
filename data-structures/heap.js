@@ -57,15 +57,16 @@ Heap.prototype.insert = function(value) {
   return reheapify(that.storage.length-1);
 };
 
-// Heap remove max method on prototype
-// Remove the max value from a heap, reorder the heap, and return the max value
+// Heap removes max method on prototype
+// Removes max value from & reorders the heap, then returns max value
 Heap.prototype.removeMax = function() {
-  // Check if heap is currently empty
+  // Checks if heap currently empty
   if (this.storage.length === 0) {
-    // If nothing to remove then return null
+    // Returns null if empty
     return null;
   } else if (this.storage.length === 1) {
-    // If heap only has one element in it then pop off the lone element in the storage array and return it
+    // If only one element in heap, 
+    // removes lone element from storage array & returns it
     var removed = this.storage.pop();
 
     return removed;
