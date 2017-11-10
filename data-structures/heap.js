@@ -98,20 +98,20 @@ Heap.prototype.removeMax = function() {
       // sets max value's index = second-child node's index
       maxIndex = 2*index + 2;
     }
-    // If the index of the max value is not equal to the index of the current node
-    // Then swap the nodes and reheapify at the new index of the current node
+    // If max value's index !== current node's index,
+    // swaps those nodes & reheapifies at the new current node's index
     if (maxIndex !== index) {
-      // Swap node values (here's a nifty way to do so "in place" using the XOR bitwise operator)
+      // Swaps node values (an "in place" way via XOR bitwise operator)
       that.storage[index] = that.storage[index] ^ that.storage[maxIndex];
       that.storage[maxIndex] = that.storage[index] ^ that.storage[maxIndex];
       that.storage[index] = that.storage[index] ^ that.storage[maxIndex];
 
-      // Reheapify at new index of current node
+      // Reheapifies at the new current node's index
       reheapify(maxIndex);
     }
   };
 
-  // Recursively move the swapped node down the heap until it's greater than both of its children
+  // Recursively moves swapped node down the heap until > both its children
   reheapify(0);
 
   // Return the removed max value from the heap
