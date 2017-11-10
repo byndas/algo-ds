@@ -72,28 +72,30 @@ Heap.prototype.removeMax = function() {
     return removed;
   }
 
-  // Handle all other cases where heap has more than one node
-  // Preserve the max value in order to return it
+  // Handles all other cases where heap has > 1 node
+  // Preserves max value to return it later
   var maxValue = this.storage[0];
-  // Replace the root node with the last node of the heap and remove the last node
+  // Replaces heap's root node with its last node & removes last node
   this.storage[0] = this.storage.pop();
 
-  // Preserve context for inner recursive helper function
+  // Preserves the context for inner recursive helper function
   var that = this;
 
-  // Recursive function to restore the heap property of the heap
+  // Recursive function restores the heap property
   var reheapify = function(index) {
-    // Set index of max value to current node's index
+    // Sets index of max value to current node's index
     var maxIndex = index;
 
-    // Check first child node's value against current node
+    // Checks first-child node's value against current node
     if ((2*index + 1 < that.storage.length) && (that.storage[2*index + 1] > that.storage[index])) {
-      // If greater then set index of max value to first child node's index
+      // If child > current, 
+      // sets max value's index = first-child node's index
       maxIndex = 2*index + 1;
     }
-    // Check second child node's value against current max node
+    // Checks second-child node's value against current max node
     if ((2*index + 2 < that.storage.length) && (that.storage[2*index + 2] > that.storage[maxIndex])) {
-      // If greater then set index of max value to second child node's index
+      // If child > current max node,
+      // sets max value's index = second-child node's index
       maxIndex = 2*index + 2;
     }
     // If the index of the max value is not equal to the index of the current node
