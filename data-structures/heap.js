@@ -33,21 +33,21 @@ var Heap = function() {
 };
 
 Heap.prototype.insert = function(value) {
-  // Push to storage array
+  // Pushes value to storage array
   this.storage.push(value);
 
   var that = this;
 
-  // Recursive function to handle swaps, input index
+  // Recursive function handles any swaps with a given index
   var reheapify = function(index) {
 
-    // Get parent index
+    // Gets parent index
     var parentInd = Math.ceil(index/2-1);
-    // Base Case : value < parent or parent is null
+    // Base Case : value < parent || parent is null
     if (parentInd < 0 || that.storage[index] <= that.storage[parentInd]) {
       return 'value added to index '+index;
     }
-    // Recursive Case: swap with parent and make recursive call
+    // Recursive Case: swaps value with parent & makes recursive call
     var temp = that.storage[index];
     that.storage[index] = that.storage[parentInd];
     that.storage[parentInd] = temp;
