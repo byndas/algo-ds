@@ -3,13 +3,16 @@ HEAPS
 
 Abstract data type
 
-A max heap is a special type of binary tree that satisfies two properties:
+A max heap is a special binary tree satisfying two properties:
 
-1. Shape property – All nodes which are at the same depth of the tree from the root node are said to be on the same level. Each level of a max heap must be filled with nodes before any nodes can appear on the next level of the max heap. When nodes are added to the next level of the max heap they must be added from left to right.
-2. Heap property – In a max heap all nodes are greater than or equal to each of its children nodes.
+1. Shape property – All nodes of the same tree depth from the root node
+    share the same level. Each max-heap level must fill with nodes for
+    any nodes to appear on the next level & are added left to right.
+    
+2. Heap property – All max-heap nodes >= each of its children nodes.
 
-Heaps are usually implemented in an array. The first element is the root, the next two are the children of the root, and the next four are their children. The children of the node at position n are at positions 2n+1 and 2n+2.
-
+Heaps usually occur in an array... 
+Child nodes of parent position 'n' have positions 2n+1 and 2n+2.
 
 View visualization here: https://presentpath.github.io/heap-visualizer/
 
