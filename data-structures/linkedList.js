@@ -23,18 +23,17 @@ myList.removeAfter(refNode)
 =>removes& and returns the node after refNode
 
 myList.insertHead(value)
-=> inserts &  new head node at the beginning of the list with the value passed in
+=> inserts & returns new head node at list start with a given value
 
 myList.removeHead()
-=> removed head node
-remove the head node of the linked list
+=> removes & returns the linked list's head node
 
 myList.findNode(value)
-=> first node that has a value matching what was passed in
+=> returns first node having a given value
 
 
 * Optimization:
-Say we have a linked list that has 100 items and we want to add an item to the very end. How would you do that with your current implementation? How can you modify the data structure to add an item to the end in constant time?
+How to add an item beyond a 100-item linked list in constant time?
 
 myList.appendToTail(value)
 => new tail node
