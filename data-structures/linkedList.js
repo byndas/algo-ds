@@ -44,21 +44,20 @@ myList.removeTail()
 
 ** Part 2
 
-Now let's think about creating insertBefore and removeBefore methods for the nodes in our list. Can you think of an efficient way to do so?
+Now let's think about creating insertBefore and removeBefore methods
+for the nodes in our list. What's an efficient way?
 
-Think about time complexity. What would it be for your current implementation of a linked list?
+What's the time complexity for your current linked list?
 
-How can we modify our data structures (Node and Linked List classes) so that we can make these O(1) operations?
+How to modify Node and Linked List classes to be O(1)?
 
-Once you've come up with a plan, implement the following methods.
+Try using the following methods:
 
 myList.insertBefore(refNode, value)
-=> new node inserted
-insert new node with associated value before refNode
+=> inserts & returns new node with a given value
 
 myList.removeBefore(refNode)
-=> removed node
-remove node before the refNode passed in
+=> removes & returns a node before the given refNode
 
 
 *** Additional Exercises:
@@ -187,15 +186,16 @@ LinkedList.prototype.appendToTail = function(value) {
    without increasing storage structure (constant space complexity). 
    What is the time complexity?
 
-4. Reverse a linked list. Do not use any additional storage structures.
+4. Reverse a linked list without using more storage structures.
 
-5. Find the kth to last element of a singly linked list.
+5. Find the nth to the last element of a singly linked list.
 
 6. Detect if a linked list has a loop.
 
 7. Check if a linked list is a palindrome.
 
-8. Given two linked lists that represent numbers, return a linked list that represents the sum of those numbers:
+8. Given two linked lists representing numbers, 
+   return one representing the sum of all those numbers:
   4 2 5        (4 -> 2 -> 5)
 + 7 3 1        (7 -> 3 -> 1)
 --------
