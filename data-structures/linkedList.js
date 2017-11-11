@@ -65,11 +65,8 @@ myList.removeBefore(refNode)
 Implement a circularly linked list:
 https://en.wikipedia.org/wiki/Linked_list#Circularly_linked_list
 
-Reimplement stack and queue data structures using linked lists.
-
-
- */
-
+Re-implement stack and queue data structures using linked lists.
+*/
 
 // PART 1
 
@@ -103,48 +100,58 @@ LinkedList.prototype.print = function() {
 };
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // get reference to former next
-  var oldNext = node.next;
-  // create new node
-  var newNext = new Node(value);
-  // store it as the new next
-  node.next = newNext;
-  // set next for the new node to be the old next
-  newNext.next = oldNext;
-  // if reference node is tail, set tail to newNext
-  if (this.tail === node) this.tail = newNext;
+  
+  var oldNext = node.next; // gets reference to former next
+ 
+  var newNext = new Node(value); // creates new node
+  
+  node.next = newNext; // stores it as the new next
+  
+  newNext.next = oldNext; // sets next for new node to be old next
+  
+  if (this.tail === node) { // if reference node is tail
+    this.tail = newNext; // sets tail to newNext
+  }
   return newNext;
 };
 
 LinkedList.prototype.removeAfter = function(node) {
-  // store reference to removed node
+  // stores reference to removed node
   var removedNode = node.next;
-  // if node is tail, then there's nothing to remove
-  if (!removedNode) return 'Nothing to remove';
-  // get reference to node after removed node
-  var newNext = removedNode.next;
-  // set newNext as the next node
-  node.next = newNext;
-  // remove reference from removed node to linked list
-  removedNode.next = null;
-  // if removedNode is tail, set tail to node
-  if (removedNode === this.tail) this.tail = node;
+  
+  if (!removedNode) { // if node is tail
+    return 'Nothing to remove';
+  }
+  
+  var newNext = removedNode.next; // gets node's link after removed node
+  
+  node.next = newNext; // sets newNext as the next node
+  
+  removedNode.next = null; // removes removed node's link to linked list
+  
+  if (removedNode === this.tail) { // if removedNode is tail
+    this.tail = node; // sets tail to node
+  }
   return removedNode;
 };
 
 LinkedList.prototype.insertHead = function(value) {
   var newHead = new Node(value);
   var oldHead = this.head;
+  
   this.head = newHead;
   newHead.next = oldHead;
+  
   return this.head;
 };
 
 LinkedList.prototype.removeHead = function() {
   var oldHead = this.head;
   var newHead = oldHead.next;
+  
   this.head = newHead;
   oldHead.next = null;
+  
   return oldHead;
 }
 
@@ -168,6 +175,7 @@ LinkedList.prototype.appendToTail = function(value) {
   // node.next = newTail;
 
   // with myList.tail property: O(1)
+  
   this.tail.next = newTail;
   this.tail = newTail;
 
