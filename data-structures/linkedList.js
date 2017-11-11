@@ -33,15 +33,13 @@ myList.findNode(value)
 
 
 * Optimization:
-How to add an item beyond a 100-item linked list in constant time?
+How to add an item to end of a 100-item linked list in constant time?
 
 myList.appendToTail(value)
-=> new tail node
-add a new tail node at the end of the list with the associated value passed in
+=> adds & returns a new tail node to end of list with a given value
 
 myList.removeTail()
-=> removed tail node
-remove the tail node from the list
+=> removes & returns the tail node from the list
 
 
 ** Part 2
@@ -82,7 +80,9 @@ function Node(value) {
 }
 
 function LinkedList(headValue) {
-  if (headValue === undefined) console.log('Must provide value for first node');
+  if (headValue === undefined) {
+    console.log('Must provide value for first node');
+  }
   this.head = new Node(headValue);
   this.tail = this.head;
 }
@@ -183,7 +183,9 @@ LinkedList.prototype.appendToTail = function(value) {
 
 2. Implement a queue using a linked list.
 
-3. Write a method that remove duplicates from an unsorted linked list. What is the time complexity? Re-implement the method without using any additional storage structure (constant space complexity). What is the time complexity?
+3. Write a method that removes duplicates from an unsorted linked list,
+   without increasing storage structure (constant space complexity). 
+   What is the time complexity?
 
 4. Reverse a linked list. Do not use any additional storage structures.
 
