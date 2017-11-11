@@ -2,7 +2,7 @@
 
 LINKED LIST
 
-Comprised of nodes that represent a sequence.
+Comprised of nodes representing a sequence.
 Each node is composed of data and a reference/link to the next node.
 
 
@@ -11,14 +11,13 @@ Each node is composed of data and a reference/link to the next node.
 ** Part 1
 
 myList.forEach(callbackFn)
-invoke callback function with the value of each node
+=> invokes callback function with the value of each node
 
 myList.print()
-=> string with all values in list (ex: '0, 1, 2, 3')
+=> returns a string with all values in list (ex: '0, 1, 2, 3')
 
 myList.insertAfter(refNode, value)
-=> new node
-insert new node associated with value passed in after refNode
+=> inserts & returns a new node with a given value
 
 myList.removeAfter(refNode)
 => removed node

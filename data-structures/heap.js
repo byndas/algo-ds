@@ -114,6 +114,6 @@ Heap.prototype.removeMax = function() {
   // Recursively moves swapped node down the heap until > both its children
   reheapify(0);
 
-  // Return the removed max value from the heap
+  // Returns the removed max value from the heap
   return maxValue;
 };
