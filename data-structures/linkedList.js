@@ -20,12 +20,10 @@ myList.insertAfter(refNode, value)
 => inserts & returns a new node with a given value
 
 myList.removeAfter(refNode)
-=> removed node
-remove node after the refNode
+=>removes& and returns the node after refNode
 
 myList.insertHead(value)
-=> new head
-insert new head node at the beginning of the list with the value passed in
+=> inserts &  new head node at the beginning of the list with the value passed in
 
 myList.removeHead()
 => removed head node
