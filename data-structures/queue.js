@@ -2,23 +2,18 @@
 
 QUEUE
 
-Abstract data type
-FIFO - First in, first out
-Collection of elements with enqueue and dequeue operations.
-Note that there is a natural order. Elements are removed in the reverse order of their addition.
+Abstract data type ---> set of elements using enqueue and dequeue
+Elements exit in the reverse order of their entry (first in, first out)
 
-DO NOT use an array and the native push/shift method in your implementation. Use an object as the underlying data structure.
-
+Use an object -- not an array with push/shift
 
 *** Operations:
 
 myQueue.enqueue(value)
-=> count of queue
-add value to collection
+=> returns count of queue & adds a given value to collection
 
 myQueue.dequeue()
-=> oldest element added collection
-Remove item so that it is no longer in collection
+=> removes & returns oldest element in collection
 
 myQueue.peek()
 => oldest element added collection
