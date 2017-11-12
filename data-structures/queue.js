@@ -10,13 +10,13 @@ Use an object -- not an array with push/shift
 *** Operations:
 
 myQueue.enqueue(value)
-=> returns count of queue & adds a given value to collection
+=> returns queue's count & adds given value to collection
 
 myQueue.dequeue()
 => removes & returns oldest element in collection
 
 myQueue.peek()
-=> returns oldest element in collection (not removing it)
+=> returns oldest element in collection (without removing it)
 
 myQueue.count()
 => returns # of elements in queue
@@ -47,7 +47,7 @@ function Queue(capacity) {
   this._tail = 0;
 }
 
-
+// returns queue's count & adds given value to collection
 Queue.prototype.enqueue = function(value) { // enqueue under-the-hood
   if (this.count() < this._capacity) {
     this._storage[this._tail++] = value;
@@ -55,27 +55,28 @@ Queue.prototype.enqueue = function(value) { // enqueue under-the-hood
   }
   return `Max capacity already reached. 
           Remove element before adding a new one.`;
-};
-// Time complexity: O(1)
+}; // O(1)
 
 
+// removes & returns oldest element in collection
 Queue.prototype.dequeue = function() { // dequeue under-the-hood
   var element = this._storage[this._head];
   delete this._storage[this._head];
   if (this._head < this._tail) this._head++;
   return element;
-};
-// Time complexity: O(1)
+}; // O(1)
 
 
+// returns oldest element in collection (without removing it)
 Queue.prototype.peek = function() {
   this._storage[this._head];
 };
 
+
+// returns # of elements in queue
 Queue.prototype.count = function() {
   return this.tail - this.head;
-};
-// Time complexity: O(1)
+}; // O(1)
 
 
 Queue.prototype.contains = function(value) {
@@ -107,7 +108,7 @@ Queue.prototype.until = function(value) {
     order using a queue data structure.
 
  */
-// Implement a queue using two stacks
+// Write a queue using two stacks
 function Stack(capacity) {
   this._capacity = capacity || Infinity;
   this._storage = {};
