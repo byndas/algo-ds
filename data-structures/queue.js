@@ -85,7 +85,7 @@ Queue.prototype.contains = function(value) {
   }
   return false;
 };
-// Time complexity: O(n)
+// O(n)
 
 
 Queue.prototype.until = function(value) {
@@ -94,7 +94,7 @@ Queue.prototype.until = function(value) {
   }
   return null;
 };
-// Time complexity: O(n)
+// O(n)
 
 /*
 *** Exercises:
@@ -108,7 +108,7 @@ Queue.prototype.until = function(value) {
     order using a queue data structure.
 
  */
-// Write a queue using two stacks
+// Write a queue using two stacks (POSSIBLE INTERVIEW QUESTION)
 function Stack(capacity) {
   this._capacity = capacity || Infinity;
   this._storage = {};
