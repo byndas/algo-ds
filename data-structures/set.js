@@ -4,7 +4,7 @@ SET
 
 Abstract data type
 Stores unique values in no particular order
-No mechanism for retrieving elements
+Lacks a mechanism for retrieving elements
 Your set should be able to store any JavaScript primitive
 
 *** Operations:
@@ -94,7 +94,7 @@ Set.prototype.forEach = function(callback) {
 /*
 *** Exercises:
 
-1. Implement the following set theory operations:
+1. Write these set theory operations:
 
 mySet.union(otherSet)
 => mySet with added values from otherSet
