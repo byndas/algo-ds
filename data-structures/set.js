@@ -10,21 +10,19 @@ Your set should be able to store any JavaScript primitive
 *** Operations:
 
 mySet.count()
-=> integer value for the number of values present in set
+=> returns integer value for # of values present in set
 
 mySet.add(value)
-=> set object
+=> returns the set's object
 
 mySet.delete(value)
-=> true if value was present and removed
-=> false if value was not present
+=> returns true if value was removed & false if value was not removed
 
 mySet.has(value)
-=> true/false
+=> returns true/false
 
 mySet.forEach(callbackFn)
-=> no return value
-calls callbackFn once for each value in the set
+=> no return value, calls callbackFn once for each value in the set
 
 Note: ES6 has a Set data structure as part of the core language.
 
