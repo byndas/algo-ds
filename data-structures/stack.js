@@ -28,23 +28,16 @@ myStack.count()
 *** Additional Exercises:
 
 Modify your stack to take a max capacity and return a string if you try to add an element when there's no more room:
-myStack.push(value)
-=> "Max capacity already reached. Remove element before adding a new one."
+-- myStack.push(value) => "Max capacity already reached. Remove element before adding a new one."
 
 Create a contains method to check if a value is in the stack:
-myStack.contains('findme')
-=> true/false
-What's the time complexity?
+-- myStack.contains('findme') => true/false   (time complexity?)
 
-Create an until method to get the number of pops until you get to a certain value:
-stack values - (first)2-5-7-3-6-9(last)
-myStack.until(7)
-=> 4
-What's the time complexity?
+Create an 'until' method geting # of pops until a certain value:
+-- stack values - (first)2-5-7-3-6-9(last)
+-- myStack.until(7) => 4    (time complexity?)
 
-
-
- */
+*/
 
 function Stack(capacity) {
   this._capacity = capacity || Infinity;
@@ -59,8 +52,7 @@ Stack.prototype.push = function(value) { // under-the-hood push
   }
   return `Max capacity already reached. 
           Remove element before adding a new one.`;
-};
-// Time complexity: O(1)
+}; // O(1)
 
 Stack.prototype.pop = function() { // under-the-hood pop
   if (this._count === 0) {
@@ -73,19 +65,15 @@ Stack.prototype.pop = function() { // under-the-hood pop
     this._count = 0;
   }
   return value;
-};
-// Time complexity: O(1)
+}; // O(1)
 
 Stack.prototype.peek = function() {
   return this._storage[this._count - 1];
-};
-// Time complexity:
+}; // O()
 
 Stack.prototype.count = function() {
   return this._count;
-};
-// Time complexity:
-
+}; // O()
 
 /*
 *** Exercises:
