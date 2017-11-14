@@ -6,26 +6,23 @@ Abstract data type --> Last in, first out --> record stack
 Collection of elements with push and pop operations.
 Elements are removed in the reverse order of their addition.
 
-DO NOT use an array and the native push/pop method in your implementation. That's too easy, yeah? =P
-Use an object as the underlying data structure.
+DO NOT use an array and the native push/pop method.
+Instead, use an object as the underlying data structure.
 
 
 *** Operations:
 
 myStack.push(value)
-=> count of stack
-add value to collection
+=> adds value to collection & returns count of stack
 
 myStack.pop()
-=> most recent element added collection
-Remove item so that it is no longer in collection
+=> removes & returns last item in collection
 
 myStack.peek()
-=> most recent element added collection
-Similiar to pop, but do not remove element from collection
+=> returns last item in collection (without removing it)
 
 myStack.count()
-=> number of elements in stack
+=> returns # of elements in stack
 
 
 *** Additional Exercises:
