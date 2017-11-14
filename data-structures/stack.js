@@ -2,10 +2,9 @@
 
 STACK
 
-Abstract data type
-LIFO - Last in, first out
+Abstract data type --> Last in, first out --> record stack
 Collection of elements with push and pop operations.
-Note that there is a natural order. Elements are removed in the reverse order of their addition.
+Elements are removed in the reverse order of their addition.
 
 DO NOT use an array and the native push/pop method in your implementation. That's too easy, yeah? =P
 Use an object as the underlying data structure.
