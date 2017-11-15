@@ -23,15 +23,16 @@ tree.contains(value)
 => returns true/false... if value is in tree
 
 tree.traverseDepthFirst(callback)
-=> undefined
-Invoke the callback for every node in a depth-first order
+=> returns undefined
+Invokes the callback for every node in a depth-first order
 
 tree.traverseBreadthFirst(callback)
-=> undefined
-Invoke the callback for every node in a breadth-first order
+=> return undefined
+Invokes the callback for every node in a breadth-first order
 
 *** Additional Exercises:
-Given treeA and treeB, check if treeB is a subtree of treeA (meaning that there exists a node n in treeA such that the subtree of n is identical to treeB).
+Given treeA and treeB, check if treeB is a subtree of treeA -->
+a node n in treeA exists such that the subtree of n is identical to treeB
 
 Given a dictionary, create a prefix tree (commonly known as a trie)
 https://en.wikipedia.org/wiki/Trie
