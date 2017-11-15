@@ -38,14 +38,15 @@ Given a dictionary, create a prefix tree (commonly known as a trie)
 https://en.wikipedia.org/wiki/Trie
 
 */
-// N-ary Tree (any number of children)
+
+// N-ary Tree (tree of n-children)
 function Tree (value) {
   this.value = value;
   this.children = [];
 }
 
 
-// Adds child to tree or subtree bound to 'this'
+// Adds child to tree or to subtree, binding child to 'this'
 Tree.prototype.addChild = function(value) {
   var child = new Tree(value);
   this.children.push(child);
