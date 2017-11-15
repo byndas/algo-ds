@@ -11,17 +11,16 @@ Each child node has 0 or more children.
 
 Constraints:
 A child has only one parent and the root node has no parent.
-Note: A tree is a special type of graph. A tree is a graph without cycles.
+Note: A tree is a special type of graph --> without cycles.
 
 *** Operations:
 
 tree.addChild(value)
-=> child node (new tree)
-add child to tree/subtree and return child node (which should be a tree instance)
+=> returns child node (new tree)
+adds child to tree/subtree and return child node (which should be a tree instance)
 
 tree.contains(value)
-=> true/false
-Return true if value is in tree, false if not
+=> returns true/false... if value is in tree
 
 tree.traverseDepthFirst(callback)
 => undefined
