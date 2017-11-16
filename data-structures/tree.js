@@ -28,8 +28,8 @@ tree.traverseBreadthFirst(callback)
 => returns undefined& runs callback for each node in a breadth-first order
 
 *** Additional Exercises:
-Given treeA and treeB, check if treeB is a subtree of treeA -->
-a node n in treeA exists such that the subtree of n is identical to treeB
+Given treeA and treeB, check if treeB is a subtree of treeA:
+a node n in treeA makes the subtree of n identical to treeB
 
 Given a dictionary, create a prefix tree (commonly known as a trie)
 https://en.wikipedia.org/wiki/Trie
