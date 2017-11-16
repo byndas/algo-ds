@@ -16,19 +16,16 @@ Note: A tree is a special type of graph --> without cycles.
 *** Operations:
 
 tree.addChild(value)
-=> returns child node (new tree)
-adds child to tree/subtree and return child node (which should be a tree instance)
+=> adds & returns child node (new tree) to tree/subtree
 
 tree.contains(value)
 => returns true/false... if value is in tree
 
 tree.traverseDepthFirst(callback)
-=> returns undefined
-Invokes the callback for every node in a depth-first order
+=> returns undefined & runs callback for each node in a depth-first order
 
 tree.traverseBreadthFirst(callback)
-=> return undefined
-Invokes the callback for every node in a breadth-first order
+=> returns undefined& runs callback for each node in a breadth-first order
 
 *** Additional Exercises:
 Given treeA and treeB, check if treeB is a subtree of treeA -->
