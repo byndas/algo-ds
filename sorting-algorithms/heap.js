@@ -3,31 +3,38 @@ HEAP SORT
 
 *** Description
 
-Heap sort consists of two parts:
-1) Build a heap out of the data from the input array
-2) Create sorted array by iteratively removing the largest element from the heap and inserting it into the sorted array
+Heap sort has two parts:
+  
+  1) Build a heap out from input array data
+  2) Build a sorted array by iteratively removing largest element from
+     heap & adding it to your sorted array
 
 *** Exercise
 
-Implement heap sort using the Heap constructor provided.
+Write heap sort using the given Heap constructor
 
 *** Extra Credit
 
-Now try building heapsort from scratch, without using the Heap constructor. See if you can do everything in place.
-(for hints see https://en.wikipedia.org/wiki/Heapsort#Algorithm)
+Write heap sort without using the Heap constructor.
+  Do everything in place.
+    (hints --> https://en.wikipedia.org/wiki/Heapsort#Algorithm)
 
 Example:
-Note that the array is separated into two portions -
-     heap|sorted
-[ 7 2 5 1|8 9 10]
-swap first value (max) with element at end of heap
-[ 1 2 5 7|8 9 10]
-heap size has decreased and sorted portion has now grown
-[ 1 2 5|7 8 9 10]
-heap portion is re-heapified so that the first value is the new max
-[ 5 1 2|7 8 9 10]
-   heap|sorted
-repeat...
+Note that the array is split in two portions -
+     
+     heap | sorted
+[ 7 2 5 1 | 8 9 10]
+
+swap first value (max) with last heap element
+[ 1 2 5 7 | 8 9 10]
+
+heap size decreases while sorted size grows
+[ 1 2 5 | 7 8 9 10]
+
+heap re-heapifies so that first value = new max
+[ 5 1 2 | 7 8 9 10]
+
+   heap | sorted --> repeat process...
 
 */
 
@@ -50,7 +57,7 @@ Heap.prototype.insert = function(value) {
     if (parentInd < 0 || that.storage[index] <= that.storage[parentInd]) {
       return 'value added to index '+index;
     }
-    // Recursive Case: swap with parent and make recursive call
+    // Recursive Case: swaps with parent & makes recursive call
     var temp = that.storage[index];
     that.storage[index] = that.storage[parentInd];
     that.storage[parentInd] = temp;
@@ -60,15 +67,13 @@ Heap.prototype.insert = function(value) {
   return reheapify(that.storage.length-1);
 };
 
-// Heap remove max method on prototype
-// Remove the max value from a heap, reorder the heap, and return the max value
+// Heap removes max method from prototype
+// Removes max value from heap, reorders heap, returns max value
 Heap.prototype.removeMax = function() {
-  // Check if heap is currently empty
-  if (this.storage.length === 0) {
-    // If nothing to remove then return null
+  if (this.storage.length === 0) { // if heap is empty, returns null
     return null;
   } else if (this.storage.length === 1) {
-    // If heap only has one element in it then pop off the lone element in the storage array and return it
+    // If one element in heap, removes & returns that element
     var removed = this.storage.pop();
 
     return removed;
