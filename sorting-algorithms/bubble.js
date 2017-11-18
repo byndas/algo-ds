@@ -3,49 +3,50 @@ Bubble SORT
 
 *** Description
 
-Iterate over array, comparing adjacent items and swap if in incorrect
-order. Largest elements bubble to the end of the array
+Iterate over array, comparing adjacent items and swap if incorrect
+order. Largest elements bubble to the end of the array.
 
-*** Exercises
+*** Exercises:
 
 - Implement bubble sort
 - Identify time complexity
 
 Optimizations:
+
 - Make algorithm adaptive (if at any point array is already
-sorted, exit function early). After doing this, what is time
-complexity for nearly sorted arrays?
+  sorted, exit function early). After doing this, what is time
+  complexity for nearly sorted arrays?
+
 - For each pass through the array, are you doing any 
-unnecessary checking of elements?
+  unnecessary checking of elements?
+
 - Minimize checking and consider the effect on time complexity.
 
 Variants:
+
 - Implement cocktail sort (for each pass find both min and max values 
-and sort in both directions). How does this impact performance?
+  and sort in both directions). How does this impact performance?
 (https://en.wikipedia.org/wiki/Cocktail_sort)
 
-Properties:
-O(1) extra space
-Time complexity:
-- worst: O(n2) comparisons and swaps
-- best: O(n) when nearly sorted
+Properties: O(1), extra space, not stable
 
-not stable
-adaptive - O(n) time when nearly sorted
+Time complexity:
+  - worst: O(n2) --> comparisons and swaps
+  - best: O(n) when nearly sorted --> adaptive
 
 Use cases:
-Similar to insertion sort (many properties are the same for
-insertion and bubble sort) - when the data is nearly sorted
-(since it's adaptive) or when the problem size is small
-(because it has low memory overhead).
+  Similar to insertion sort with nearly sorted data
+  (since adaptive data, insertion sort & bubble sort
+  share many same properties) or with a small problem size
+  (low memory overhead).
 */
 
 var bubbleSort = function(array) {
-  var wall = array.length; // first sorted element
+  var wall = array.length; // covers first sorted element
   while (wall >= 0) {
-    for (var i = 0; i < wall; i++) { // iterate up array to wall
+    for (var i = 0; i < wall; i++) { // iterates up array to wall
       if (array[i] > array[i + 1]) { // if current value > next value
-        array = swap(array, i, i + 1); // swap values
+        array = swap(array, i, i + 1); // swaps values
       }
     }
     wall--;
