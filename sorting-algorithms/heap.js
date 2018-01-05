@@ -75,10 +75,9 @@ Heap.prototype.removeMax = function() {
   } else if (this.storage.length === 1) {
     // If one element in heap, removes & returns that element
     var removed = this.storage.pop();
-
     return removed;
   }
-
+////////////////////////////////////////////////////////////////////
   // Handle all other cases where heap has more than one node
   // Preserve the max value in order to return it
   var maxValue = this.storage[0];
