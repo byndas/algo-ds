@@ -81,7 +81,8 @@ Heap.prototype.removeMax = function() {
   // Handle all other cases where heap has more than one node
   // Preserve the max value in order to return it
   var maxValue = this.storage[0];
-  // Replace the root node with the last node of the heap and remove the last node
+  // Replace the root node with the last node of the heap 
+  // and remove the last node
   this.storage[0] = this.storage.pop();
 
   // Preserve context for inner recursive helper function
@@ -102,7 +103,7 @@ Heap.prototype.removeMax = function() {
       // If greater then set index of max value to second child node's index
       maxIndex = 2*index + 2;
     }
-    // If the index of the max value is not equal to the index of the current node
+    // If max value index is not equal to the index of the current node
     // Then swap the nodes and reheapify at the new index of the current node
     if (maxIndex !== index) {
       // Swap node values (here's a nifty way to do so "in place" using the XOR bitwise operator)
