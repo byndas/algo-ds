@@ -105,7 +105,7 @@ Heap.prototype.removeMax = function() {
     }
     // If max value index is not equal to the index of the current node
     // Then swap the nodes and reheapify at the new index of the current node
-    if (maxIndex !== inde
+    if (maxIndex !== index) {
       // Swap node values 
       // (here's a nifty way to do so "in place" using the XOR bitwise operator)
       that.storage[index] = that.storage[index] ^ that.storage[maxIndex];
