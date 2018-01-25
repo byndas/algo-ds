@@ -42,8 +42,11 @@ O(n) extra space for iterative solution
 O(n·log(n)) time (for worst and best)
 stable - the only stable O(n·log(n)) sorting algorithm
 not adaptive
-Use cases:
-If stabilty is a requirement and using extra space is no concern, merge sort is great because it's simple to implement, it's the only stable O(nlog(n)) sorting algorithm.
+
+Use cases: 
+If stabilty is a requirement and using extra space is no concern, 
+  merge sort is great because it's simple to implement, 
+  it's the only stable O(nlog(n)) sorting algorithm.
 */
 function mergeSortRecursive (array) {
   // base case
@@ -85,9 +88,11 @@ function merge(left, right) {
 
   // while result is not fully populated
   while (result.length < (left.length + right.length)) {
-    // if all elements in left have been added, then add remaining right elements
+    // if all elements in left have been added, 
+    // then add remaining right elements
     if (iLeft === left.length) result = result.concat(right.slice(iRight));
-    // if all elements in right have been added, then add remaining left elements
+    // if all elements in right have been added, 
+    // then add remaining left elements
     else if (iRight === right.length) result = result.concat(left.slice(iLeft));
     // compare elements in subarrays and add lower of the two to result
     else if (left[iLeft] <= right[iRight]) result.push(left[iLeft++]);
