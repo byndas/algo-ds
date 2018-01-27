@@ -48,7 +48,8 @@ function partition(arr, lo, hi) {
   var pivot = arr[hi];
   // keep track of index to put pivot at
   var pivotLoc = lo;
-  // iterate through subarray and if element <= pivot, place element before pivotLoc
+  // iterate through subarray and if element <= pivot, place element before
+  // pivotLoc
   for (var i=lo; i<hi; i++) {
     if (arr[i] <= pivot) {
       swap(arr, pivotLoc, i);
@@ -70,9 +71,10 @@ function swap (arr, i1, i2) {
 }
 
 /*
-*** Extra Credit
 
+*** Extra Credit
 Variants:
-- Implement a multi-pivot quicksort (ex: partition into 3 subarrays using 2 pivots)
+- Implement a multi-pivot quicksort 
+  (ex: partition into 3 subarrays using 2 pivots)
 
 */
