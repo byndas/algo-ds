@@ -46,10 +46,9 @@ function quicksort(array, lo, hi) {
 function partition(arr, lo, hi) {
   // choose last element as pivot
   var pivot = arr[hi];
-  // keep track of index to put pivot at
+  // keep track of the index to put pivot at
   var pivotLoc = lo;
-  // iterate through subarray and if element <= pivot, place element before
-  // pivotLoc
+  // iterate over subarray, if element <= pivot, put element before pivotLoc
   for (var i=lo; i<hi; i++) {
     if (arr[i] <= pivot) {
       swap(arr, pivotLoc, i);
