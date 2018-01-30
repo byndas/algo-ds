@@ -24,7 +24,10 @@ O(n^2) time (for few unique keys), usually O(n·log(n)) if recursion balanced
 not stable
 not adaptive
 Use cases:
-Quicksort is in place and has low overhead. If a stable sort is not necessary. It has a higher worstcase time complexity than merge sort (if pivot is not in center of array)
+Quicksort is in place and has low overhead. 
+Use when a stable sort is not necessary.
+Has higher worstcase time complexity than merge sort 
+  (if pivot is not in center of array)
 */
 
 function quicksort(array, lo, hi) {
