@@ -20,7 +20,7 @@ Variants:
 
 Properties:
 O(n) extra space
-O(n^2) time (for few unique keys), usually O(n·log(n)) if recursion balanced
+O(n^2) time (for few unique keys), or O(n·log(n)) if recursion balanced
 not stable
 not adaptive
 Use cases:
