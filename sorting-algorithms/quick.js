@@ -1,5 +1,5 @@
 /*
-MERGE SORT
+Quick SORT
 
 *** Description
 Like merge sort, quick sort employs a divide and conquer strategy.
