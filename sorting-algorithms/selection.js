@@ -35,7 +35,8 @@ O(n) swaps
 not stable
 not adaptive
 Use cases:
-Since selection sort minimizes the number of swaps, it's useful when the cost of swapping items is high.
+Since selection sort minimizes the number of swaps, 
+  it's useful when the cost of swapping items is high.
 Comparison to other algorithms:
 */
 
