@@ -5,7 +5,9 @@ SELECTION SORT
 
 Iterate over array and grow a sorted array behind current element.
 
-For each position, find the smallest element in unsorted subarray starting at that position, and swap elements so that smallest element is at the beginning of unsorted subarray.
+For each position, find the smallest element in unsorted subarray starting
+ at that position, and swap elements so that smallest element is at the
+  beginning of unsorted subarray.
 
 example:
 [ 1 2 3|9 5 7 4 ]
