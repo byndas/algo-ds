@@ -31,7 +31,9 @@ Stable Variant
 - Use your comparator function to verify that your sort is stable by taking
    input: [{value: 15}, {value: 10, order: 1}, {value: 10, order: 2}]
 
-- Implement selection sort for a linked list (you can use your data structure implemention from earlier in the course). How does this impact performance and stability?
+- Implement selection sort for a linked list (you can use your data structure 
+   implemention from earlier in the course). 
+    How does this impact performance and stability?
 
 
 Properties:
