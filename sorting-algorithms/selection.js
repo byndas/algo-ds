@@ -22,7 +22,7 @@ sorted portion has now grown:
 - Implement selection sort
 - Identify time complexity
 
-Stable Variant
+Stable Variant:
 - Implement as a stable sort - rather than swapping, the minimum value is 
    inserted into the first position and all other items are shifted one to 
     the right. How does this impact performance?
@@ -51,7 +51,8 @@ Comparison to other algorithms:
 var selectionSort = function (array, comparator) {
   comparator = comparator || defaultComparator;
   array.forEach(function(element, index) {
-    // for each position, find index of minimum value in subarray starting at that positions
+    // for each position, find index of minimum value in a subarray starting
+    // at that position
     var minValue = element;
     var minIndex = index;
     for (var i = index; i<array.length; i++) {
