@@ -3,8 +3,8 @@ Bubble SORT
 
 *** Description
 
-Iterate over array, comparing adjacent items and swap if incorrect
-order. Largest elements bubble to the end of the array.
+Iterate over array, comparing adjacent items and swap if incorrect order.
+Largest elements bubble to the end of the array.
 
 *** Exercises:
 
@@ -13,9 +13,9 @@ order. Largest elements bubble to the end of the array.
 
 Optimizations:
 
-- Make algorithm adaptive (if at any point array is already
-  sorted, exit function early). After doing this, what is time
-  complexity for nearly sorted arrays?
+- Make algorithm adaptive
+  (if at any point array is already sorted, exit function early).
+  After doing this, what is time complexity for nearly sorted arrays?
 
 - For each pass through the array, are you doing any 
   unnecessary checking of elements?
