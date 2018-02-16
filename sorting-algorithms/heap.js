@@ -96,7 +96,7 @@ Heap.prototype.removeMax = function() {
     // Check first child node's value against current node
     if ( (2*index + 1 < that.storage.length) && 
          (that.storage[2*index + 1] > that.storage[index]) ) {
-      // If greater then set index of max value to first child node's index
+      // If greater, set max value's index to first child node's index
       maxIndex = 2*index + 1;
     }
     // Check second child node's value against current max node
