@@ -19,7 +19,9 @@ function paintFill(screen, point, newColor) {
     if (screen[row][column-1] === originalColor) {
       recurse(row, column-1);
     }
-    if (screen[row][column+1] === originalColor) recurse(row, column+1);
+    if (screen[row][column+1] === originalColor) {
+      recurse(row, column+1);
+    }
   }
   recurse(point.row, point.column);
   return screen;
