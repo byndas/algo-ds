@@ -8,7 +8,8 @@ The function will change the original color of the point to the new color and
 
 function paintFill(screen, point, newColor) {
   var originalColor = screen[point.row][point.column];
-  function recurse(row, column) {
+ 
+ function recurse(row, column) {
     screen[row][column] = newColor;
     if (screen[row-1] && screen[row-1][column] === originalColor) { 
       recurse(row-1, column);
