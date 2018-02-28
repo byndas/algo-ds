@@ -6,9 +6,13 @@ Version 1:
    assuming you can only move to the right and down.
 
 Version 2:
-Now, imagine that the you can move up, down, left, 
-or right but cannot visit a spot that has already been visited. How many unique paths can the you take?
-Hint: it may be useful to create a grid class and use it to keep track of the state as the you traverses the grid. What useful methods can you put on your grid class? Can you write an implementation that only uses a single grid?
+ Now, imagine that the you can move up, down, left, 
+  or right but cannot visit a spot that has already been visited. 
+   How many unique paths can the you take?
+    Hint: It may be useful to create a grid class and use it to keep track
+           of the state as the user traverses the grid. 
+          What useful methods can you put on your grid class? 
+          Can you write an implementation that only uses a single grid?
 */
 
 // Version 1
