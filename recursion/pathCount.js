@@ -6,7 +6,7 @@ Version 1:
    assuming you can only move to the right and down.
 
 Version 2:
- Imagine that the you can move up, down, left, or right 
+ Imagine that you can move up, down, left, or right 
   but not to an already visited spot. 
  How many unique paths can the you take?
     
