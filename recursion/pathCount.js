@@ -10,7 +10,7 @@ Version 2:
   but not to an already visited spot. 
  How many unique paths can the you take?
     
-Hint: It may be useful to create a grid class and use it to keep track
+ Hint: It may be useful to create a grid class and use it to keep track
        of the state as the user traverses the grid. 
       What useful methods can you put on your grid class? 
       Can you write an implementation that only uses a single grid?
