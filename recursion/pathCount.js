@@ -22,7 +22,7 @@ function pathCountV1 (rowCount, columnCount) {
   function recurse(i, j) {
     if (i === rowCount-1 && j === columnCount-1) { pathCount++; }
     else {
-      if (i<rowCount-1) recurse(i+1, j);
+      if (i<rowCount-1) { recurse(i+1, j); }
       if (j<columnCount-1) recurse(i, j+1);
     }
 
